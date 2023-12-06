@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="Search.png">
+        <title>Search</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    </head>
+    <style>
+        body{
+            background-color: rgb(27, 27, 27);
+            background: linear-gradient(319deg, #91d370 0%, #bca0ff 37%, #f2cd54 100%);
+            background-repeat: no-repeat;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+        h1{
+            color:white;
+            font-family: 'Fredoka One';
+            src: url('FredokaOne-Regular.ttf');
+            margin-top: 90px;
+            letter-spacing: 8px;
+            word-break: break-all;
+        }
+        #search{
+            background-color: rgba(0, 0, 0, 0.521);
+            border: 0px;
+            border-radius: 20px;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 0px;
+            padding: 16px;
+            color: white;
+            margin-top: 20px;
+            width: 92%;
+            left: 0px;
+            transition: 0.2s all ease;
+        }
+        #SearchButton{
+            background-color: rgb(24, 24, 24);
+            color: white;
+            padding:20px;
+            border:0px;
+            border-radius: 20px;
+            border-bottom-left-radius: 0px;
+            border-top-left-radius: 0px;
+            word-break: break-all;
+            transition: 0.2s all ease;
+        }
+        #SearchButton:hover{
+            background-color: rgb(70, 70, 70);
+        }
+        #EndermanWeb{
+            border-radius: 20px; 
+            border: 0px; 
+            background-color: rgba(0, 0, 0, 0.356); 
+            color: white; 
+            padding: 10px; 
+            word-break: break-all; 
+            margin-top: 20px;
+            transition: 0.2s all;
+        }
+        #EndermanWeb:hover{
+            background-color: rgba(0, 0, 0, 0.836)
+        }
+    </style>
+    <body>
+        <h1> <i class="bi bi-search"></i> Search The Web </h1>
+        <span><input id="search" placeholder="Type anything here to search" onkeypress="if (event.keyCode === 13) {search()}"><button id="SearchButton"> <i class="bi bi-search"></i> </button></span>
+        <h1 style="margin-top: 40px;"> Other Sites </h1>
+        <button id="EndermanWeb" onclick="window.location = 'https://enderman-somnath.github.io/EndermanWeb/'"><img src="icon2.png" style="height: 90px;"><br>EndermanWeb</button>
+    </body>
+    <script>
+        const searchelement = document.querySelector("#search")
+        const searchbutton = document.querySelector("#SearchButton")
+    var w = document.documentElement.clientWidth || window.innerWidth;
+        if (w <= 765) {
+        searchelement.style.borderBottomRightRadius="20px";
+        searchelement.style.borderTopRightRadius="20px";
+        searchbutton.style.borderBottomLeftRadius="20px";
+        searchbutton.style.borderTopLeftRadius="20px";
+        searchbutton.style.marginTop="10px"
+        searchbutton.innerHTML="Search"
+        } else {
+        searchelement.style.borderBottomRightRadius="0px";
+        searchelement.style.borderTopRightRadius="0px";
+        searchelement.style.borderTopRightRadius="0px";
+        searchbutton.style.borderBottomLeftRadius="0px";
+        searchbutton.style.borderTopLeftRadius="0px";
+        searchbutton.style.marginTop="0px"
+        searchbutton.innerHTML=" <i class='bi bi-search'></i> "
+        }
+        window.addEventListener('resize', function() {
+          const  w = document.documentElement.clientWidth || window.innerWidth;
+          if (w <= 765) {
+        searchelement.style.borderBottomRightRadius="20px";
+        searchelement.style.borderTopRightRadius="20px";
+        searchbutton.style.borderBottomLeftRadius="20px";
+        searchbutton.style.borderTopLeftRadius="20px";
+        searchbutton.style.marginTop="10px"
+        searchbutton.innerHTML="Search"
+        } else {
+        searchelement.style.borderBottomRightRadius="0px";
+        searchelement.style.borderTopRightRadius="0px";
+        searchelement.style.borderTopRightRadius="0px";
+        searchbutton.style.borderBottomLeftRadius="0px";
+        searchbutton.style.borderTopLeftRadius="0px";
+        searchbutton.style.marginTop="0px"
+        searchbutton.innerHTML=" <i class='bi bi-search'></i> "
+        }
+        });
+        function search(){
+            window.location = "https://www.google.com/search?q="+document.getElementById("search").value;
+        }
+        </script>
+</html>
