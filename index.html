@@ -81,7 +81,7 @@
     </style>
     <body>
         <h1> <i class="bi bi-search"></i> Search The Web </h1>
-        <span><input id="search" onkeypress="if (event.keyCode === 13) {search()}"><button id="SearchButton"> <i class="bi bi-search"></i> </button></span>
+        <span><input id="search" onkeypress="if (event.keyCode === 13) {search()}"><button id="SearchButton"  onclick="search()"> <i class="bi bi-search"></i> </button></span>
         <h1 style="margin-top: 40px;"> Other Sites </h1>
         <div>
         <button id="EndermanWeb" title="EndermanWeb" class="shortcuts" onclick="window.location = 'https://EndermanWeb.pages.dev'"><img src="https://endermanweb.pages.dev/icon.png" style="height: 90px;"></button>
@@ -107,8 +107,11 @@
         });
         function search(){
             if (document.getElementById("search").value == "" || document.getElementById("search").value == null || document.getElementById("search").value == undefined) {
-            window.open("https://www.google.com/search?q="+document.getElementById("search").value);
-        }
+                return;
+            }
+                else{
+                    window.open("https://www.google.com/search?q="+document.getElementById("search").value);
+                }
         }
         </script>
 </html>
